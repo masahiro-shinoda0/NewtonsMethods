@@ -37,12 +37,41 @@
 ### 漸化式を解く
 極限値を $`\alpha=\lim_{n\to \infty} A_n`$ とし，漸化式に代入すると，$`\alpha=\frac{\alpha}{2}+\frac{1}{\alpha}`$となり，これを解くと，$`\alpha=\sqrt{2}`$ となる。
 
-#### 解法1
+#### 解法1 (はさみうちの定理)
 もとの漸化式を以下のように変形する。
 
 <p align="center">
   $A_{n+1}-\alpha=\frac{1}{2}(A_n-\alpha)+(\frac{1}{A_n}-\frac{1}{\alpha})$
 </p>
+
+次に，すべての自然数 $`n`$ に対して，$`A_n>\sqrt{2}`$ であることを，数学的帰納法を用いて証明する。
+##### (I)
+$`n=1`$ のとき。このとき，$`A_1 = 2 > \sqrt{2}`$ であるから，みたす。
+
+##### (II)
+$`n=k`$ のとき，$`A_k>\sqrt(2)`$ であると仮定すると，$`n=k+1`$ のとき，
+
+<p align="center">
+  $A_{k+1}-\sqrt{2} = A_k-\sqrt{2}-\frac{{A_k}^2-2}{2A_k} = A_k-\sqrt{2}-\frac{(A_k-\sqrt{2})(A_k+\sqrt{2})}{2A_k} = (A_k-\sqrt{2})(1-\frac{A_k+\sqrt{2}}{2A_k}) = (A_k-\sqrt{2})^2 \cdot \frac{1}{2A_k} > 0$
+</p>
+
+よって，$`n=k+1`$ のときもみたす。
+
+(I), (II)より，すべての自然数に対して，$`A_n>\sqrt{2}`$ であることが示された。
+
+上の結果より，$`A_n>\alpha=\sqrt{2}`$ ，よって$`\frac{1}{A_n}-\frac{1}{\alpha}<0`$であるから，以下の不等式を得る。
+
+<p align="center">
+  $|A_{n+1}-\alpha|<\frac{1}{2}|a_n-\alpha|$
+</p>
+
+繰り返し適用すると，
+
+<p align="center">
+  $|A_n-\alpha| < \frac{1}{2}|a_{n-1}-\alpha| < (\frac{1}{2})^2|a_{n-2}-\alpha| < \dots < (\frac{1}{2})^{n-1}|a_1-\alpha|$
+</p>
+
+よって，はさみうちの原理より，$`\lim_{n\to \infty} A_n = \sqrt{2}`$
 
 #### 解法2
 もとの漸化式から，$`\sqrt{2}, -\sqrt{2}`$ をそれぞれ引いたものを考える。
@@ -83,3 +112,6 @@
 </p>
 
 したがって，$`\lim_{n\to \infty} A_n = \sqrt{2} \cdot \frac{3+2\sqrt{2}+0}{3+2\sqrt{2}-0} = \sqrt{2}`$
+
+
+### 計算機で求める
