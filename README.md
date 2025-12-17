@@ -35,8 +35,14 @@
 これを変形すると，$`A_{n+1}=\frac{A_n}{2}+\frac{1}{A_n}`$となる。なお，実際にプログラム中に書く更新式は，`t = t/2 + 1/t` とするのがよい。
 
 ### 漸化式を解く
-極限値を $`\alpha=\lim_{n\to \infty} A_n`$ とし，漸化式に代入すると，$`\alpha=\frac{\alpha}{2}+\frac{1}{\alpha}`$となり，これを解くと，$`\alpha=\sqrt{2}`$ となる。もとの漸化式を以下のように変形する。
+極限値を $`\alpha=\lim_{n\to \infty} A_n`$ とし，漸化式に代入すると，$`\alpha=\frac{\alpha}{2}+\frac{1}{\alpha}`$となり，これを解くと，$`\alpha=\sqrt{2}`$ となる。
+
+#### 解法1
+もとの漸化式を以下のように変形する。
 
 <p align="center">
   $A_{n+1}-\alpha=\frac{1}{2}(A_n-\alpha)+(\frac{1}{A_n}-\frac{1}{\alpha})$
 </p>
+
+#### 解法2
+もとの漸化式から，$`\sqrt{2}, -\sqrt{2}`$ をそれぞれ引いたものを考える。
