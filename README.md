@@ -1,4 +1,4 @@
-# NewtonsMethods
+# Sqrt2
 ニュートン法で $`\sqrt{2}`$ の近似値を求める
 
 
